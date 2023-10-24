@@ -22,14 +22,14 @@ public class CandidateEntity {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
   private String name;
-  @Pattern(regexp = "⁽?!\\s*$).+", message = "O campo (username) não deve conter espaços")
+  @Pattern(regexp = "(?!\\s*$).+", message = "O campo (username) não deve conter espaços")
   @Length(min=3, max =20)
   private String username;
 
   @Email(message = "O campo (email) deve conter um e-mail válido")
   private String email;
 
-  @Length(min=10, max =100)
+  @Length(min=5, max =100)
   private String password;
   private String description;
   private String curriculum;
